@@ -1,3 +1,8 @@
+# Typegoose-frontend
+
+Typegoose doesn't play well with fron-end.
+This package let you use the Typegoose for both the client AND the server!
+
 # Typegoose
 
 [![Build Status](https://travis-ci.org/szokodiakos/typegoose.svg?branch=master)](https://travis-ci.org/szokodiakos/typegoose)
