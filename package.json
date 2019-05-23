@@ -1,5 +1,5 @@
 {
-  "name": "typegoose",
+  "name": "typegoose-frontend",
   "version": "5.6.0",
   "description": "Define Mongoose models using TypeScript classes.",
   "main": "lib/typegoose.js",
