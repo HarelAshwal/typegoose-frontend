@@ -1,10 +1,10 @@
 /** @format */
+import { isBrowser, isNode } from 'browser-or-node';
 
-declare var window: any;
 
 export function loadMoongoose() {
   // import * as mongoose from 'mongoose';
-  if (typeof window === 'undefined') {
+  if (isNode) {
     var _require = eval('require');
     // nodeJS
     var mongoose = _require('mongoose');
@@ -17,7 +17,6 @@ export function loadMoongoose() {
 }
 
 var mongoose = loadMoongoose();
-
 
 import { schema, virtuals, methods } from './data';
 import { isPrimitive, initAsObject, initAsArray, isString, isNumber, isObject } from './utils';
@@ -83,7 +82,7 @@ const isWithStringTransform = (options: PropOptionsWithStringValidate) =>
 const isWithNumberValidate = (options: PropOptionsWithNumberValidate) => options.min || options.max;
 
 const baseProp = (rawOptions: any, Type: any, target: any, key: any, isArray = false) => {
-  if (typeof window !== 'undefined') {
+  if (isBrowser) {
     // on client don't do anything...
     return;
   }
