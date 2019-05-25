@@ -32,7 +32,7 @@ const isWithStringValidate = (options) => options.minlength || options.maxlength
 const isWithStringTransform = (options) => options.lowercase || options.uppercase || options.trim;
 const isWithNumberValidate = (options) => options.min || options.max;
 const baseProp = (rawOptions, Type, target, key, isArray = false) => {
-    console.log('here! ');
+
     const name = target.constructor.name;
     const isGetterSetter = Object.getOwnPropertyDescriptor(target, key);
     if (isGetterSetter) {
