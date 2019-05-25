@@ -83,6 +83,11 @@ const isWithStringTransform = (options: PropOptionsWithStringValidate) =>
 const isWithNumberValidate = (options: PropOptionsWithNumberValidate) => options.min || options.max;
 
 const baseProp = (rawOptions: any, Type: any, target: any, key: any, isArray = false) => {
+  if (typeof window !== 'undefined') {
+    // on client don't do anything...
+    return;
+  }
+
   const name: string = target.constructor.name;
   const isGetterSetter = Object.getOwnPropertyDescriptor(target, key);
   if (isGetterSetter) {
